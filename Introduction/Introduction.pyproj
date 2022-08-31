@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4979f473-ad56-453d-b16b-ac9c38c88ff3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Seminar2\task13.py</StartupFile>
+    <StartupFile>Seminar2\task14.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -28,6 +28,7 @@
     <Compile Include="Seminar2\task11.py" />
     <Compile Include="Seminar2\task12.py" />
     <Compile Include="Seminar2\task13.py" />
+    <Compile Include="Seminar2\task14.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Seminar2\" />
