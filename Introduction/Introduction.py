@@ -1,15 +1,12 @@
 # -*- coding: cp1251 -*-
-print('Введите номер четверти прямоугольной системы координат: ')
-quarter = input()
+print('Введите координаты первой точки: ')
+x1 = float(input('x = '))
+y1 = float(input('y = '))
+z1 = float(input('z = '))
+print('Введите координаты второй точки: ')
+x2 = float(input('x = '))
+y2 = float(input('y = '))
+z2 = float(input('z = '))
 
-print('Допустимые значения: ')
-if ('3' in quarter) or ('III' in quarter):
-    print('x < 0; y < 0')
-elif ('2' in quarter) or ('II' in quarter):
-    print('x < 0; y > 0')
-elif ('1' in quarter) or ('I' in quarter):
-    print('x > 0; y > 0')
-elif ('4' in quarter) or ('IV' in quarter):
-    print('x > 0; y < 0')
-elif x == 0 and y != 0:
-    print('Ошибка! Неудалось распознать введённую четверть.')
+print('Расстояние между двумя введёнными точками: ')
+print(round(((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2) ** (0.5),3))
