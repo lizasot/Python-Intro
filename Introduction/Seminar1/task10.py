@@ -1,11 +1,6 @@
 print('Введите координаты первой точки: ')
-x1 = float(input('x = '))
-y1 = float(input('y = '))
-z1 = float(input('z = '))
-print('Введите координаты второй точки: ')
-x2 = float(input('x = '))
-y2 = float(input('y = '))
-z2 = float(input('z = '))
+x1, y1, z1 = list(map(float, input('Введите через пробел координаты первой точки (x,y,z): ').split()))
+x2, y2, z2 = list(map(float, input('Введите через пробел координаты второй точки (x,y,z): ').split()))
 
 print('Расстояние между двумя точками пространства: ')
 print(round(((x2 - x1) ** 2 + (y2 - y1) ** 2 + (z2 - z1) ** 2) ** (0.5),3))
