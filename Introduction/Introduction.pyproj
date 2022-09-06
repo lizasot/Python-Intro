@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4979f473-ad56-453d-b16b-ac9c38c88ff3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Seminar1\task10.py</StartupFile>
+    <StartupFile>Seminar2\task15.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,8 +25,20 @@
     <Compile Include="Seminar1\task10.py" />
     <Compile Include="Seminar1\task8.py" />
     <Compile Include="Seminar1\task9.py" />
+    <Compile Include="Seminar2\task11.py" />
+    <Compile Include="Seminar2\task12.py" />
+    <Compile Include="Seminar2\task13.py" />
+    <Compile Include="Seminar2\task14.py" />
+    <Compile Include="Seminar2\task15.py" />
+    <Compile Include="Seminar2\task16.py" />
+    <Compile Include="Seminar2\task17.py" />
+    <Compile Include="Seminar2\task18.py" />
+    <Compile Include="Seminar2\task19.py" />
+    <Compile Include="Seminar2\task20.py" />
+    <Compile Include="Seminar2\task21.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Seminar2\" />
     <Folder Include="Seminar1\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
