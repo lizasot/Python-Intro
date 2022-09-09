@@ -1,8 +1,8 @@
 def fromDecimalToBinary(numb : int):
     result : list = []
-    while (numb > 2):
+    while (numb >= 2):
         result.append(numb % 2)
-        numb = int(numb / 2)
+        numb //= 2
     result.append(1)
     result.reverse()
     return ''.join(map(str,result))
