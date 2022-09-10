@@ -19,7 +19,7 @@ k = int(input('Введите число k, обозначающее степе�
 
 with open('polynomial.txt','w') as f:
     for x in range(k,-1,-1):
-        res = getStrAXK(randint(0,100),x)
+        res = getStrAXK(randint(0,3),x)
         if x != k and len(res) != 0:
             f.write(' + ')
         f.write(res)
