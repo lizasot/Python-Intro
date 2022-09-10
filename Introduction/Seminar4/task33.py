@@ -17,9 +17,10 @@ def getStrAXK(a : int, k : int):
 
 k = int(input('Введите число k, обозначающее степень многочлена: '))
 
-for x in range(k,-1,-1):
-    res = getStrAXK(randint(0,100),x)
-    if x != k and len(res) != 0:
-        print(' + ', end='')
-    print(res, end='')
-print()
+with open('polynomial.txt','w') as f:
+    for x in range(k,-1,-1):
+        res = getStrAXK(randint(0,100),x)
+        if x != k and len(res) != 0:
+            f.write(' + ')
+        f.write(res)
+    f.write('\n')
