@@ -64,34 +64,38 @@ def getFreeCell(field : list):
             result.append(x)
     return result
 
+
 def moveSelection(field : list, current_cell : int, direction : Direction):
     freeCell = getFreeCell(field)
+    tmpt_cell = 0
     if direction == Direction.left:
-        if current_cell == 0:
-            return 8
-        else:
-            return current_cell - 1
+        return freeCell[freeCell.index(current_cell) - 1]
     elif direction == Direction.right:
-        if current_cell == 8:
-            return 0
-        else:
-            return current_cell + 1
+        return freeCell[(freeCell.index(current_cell) + 1) % len(freeCell)]
     elif direction == Direction.up:
-        for x in range(0,3):
-            if current_cell == x:
-                return x+6
-        return current_cell - 3
+        if current_cell - 3 in freeCell:
+            return current_cell - 3
+        elif current_cell - 6 in freeCell:
+            return current_cell - 6
+        else:
+            return current_cell
     elif direction == Direction.down:
-        for x in range(0,3):
-            if current_cell == x+6:
-                return x
-        return current_cell + 3
+        if current_cell + 3 in freeCell:
+            return current_cell + 3
+        elif current_cell + 6 in freeCell:
+            return current_cell + 6
+        else:
+            return current_cell
 
 field : list = [' ']*9
 player = False
+lose = False
 
 while True:
     current_cell = getIndFirstFreeCeil(field)
+    if current_cell  == -1:
+        lose = True
+        break
     clear()
     updateConsole(player, field, current_cell)
     sleep(0.8)
@@ -119,9 +123,13 @@ while True:
     else:
         player = not player
 
-
-if player:
-    print('Победил игрок 2!') #'o'
+clear()
+if lose:
+    print('Ничья')
 else:
-    print('Победил игрок 1!') #'x'
+    if player:
+        print('Победил игрок 2!') #'o'
+    else:
+        print('Победил игрок 1!') #'x'
 print(getStrField(field))
+sleep(1)
