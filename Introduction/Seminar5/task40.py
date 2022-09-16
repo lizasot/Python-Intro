@@ -70,37 +70,22 @@ def moveSelection(field : list, current_cell : int, direction : Direction):
         if current_cell == 0:
             return 8
         else:
-            return current_cell
+            return current_cell - 1
     elif direction == Direction.right:
-        if current_cell != 2 and current_cell != 5 and current_cell != 8:
-            if (current_cell + 1) in freeCell:
-                return current_cell + 1
-            elif (current_cell + 2) in freeCell:
-                return current_cell + 2
-            else:
-                return current_cell
+        if current_cell == 8:
+            return 0
         else:
-            return current_cell
+            return current_cell + 1
     elif direction == Direction.up:
-        if current_cell != 0 and current_cell != 1 and current_cell != 2:
-            if (current_cell - 3) in freeCell:
-                return current_cell - 3
-            elif (current_cell - 6) in freeCell:
-                return current_cell - 6
-            else:
-                return current_cell
-        else:
-            return current_cell
+        for x in range(0,3):
+            if current_cell == x:
+                return x+6
+        return current_cell - 3
     elif direction == Direction.down:
-        if current_cell != 6 and current_cell != 7 and current_cell != 8:
-            if (current_cell + 3) in freeCell:
-                return current_cell + 3
-            elif (current_cell + 6) in freeCell:
-                return current_cell + 6
-            else:
-                return current_cell
-        else:
-            return current_cell
+        for x in range(0,3):
+            if current_cell == x+6:
+                return x
+        return current_cell + 3
 
 field : list = [' ']*9
 player = False
