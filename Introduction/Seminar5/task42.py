@@ -10,13 +10,33 @@ def getEncodeStr(text : str):
             current_char = text[x]
         else:
             count_repeat += 1
+    result += str(count_repeat)
+    result += current_char
+    return result
 
 def encodeFile(filename_input : str, filename_output : str):
     with open(filename_input,'r') as f_in, open(filename_output,'w') as f_out:
         text = f_in.read()
         f_out.write(getEncodeStr(text))
 
+def getDecodeStr(text : str):
+    result = ''
+    x = 0
+    y = 0
+    iter = 0
+    while x != len(text):
+        while text[y].isdigit():
+            y += 1
+        iter = int(text[x:y])
+        result += text[y] * iter
+        y += 1
+        x = y
+    return result
 
+def decodeFile(filename_input : str, filename_output : str):
+    with open(filename_input,'r') as f_in, open(filename_output,'w') as f_out:
+        text = f_in.read()
+        f_out.write(getDecodeStr(text))
 
 
 
@@ -27,4 +47,5 @@ if choice == 1:
     encodeFile('inputRLE.txt','outputRLE.txt')
     print('Файл успешно сжат в outputRLE.txt')
 elif choice == 2:
+    decodeFile('inputUnRLE.txt','outputUnRLE.txt')
     print('Файл успешно восстановлен в outputUnRLE.txt')
