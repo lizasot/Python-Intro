@@ -14,7 +14,7 @@ def startGameConsole(mode : int = 1, candy = 30, max_take = 3):
     end_game = False
     current_player = False
 
-    while end_game == False:
+    while not end_game:
         print()
         print(f'Текущее количество конфет: {candy}')
         current_max_take = min(max_take, candy)
