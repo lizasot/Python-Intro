@@ -1,11 +1,7 @@
 from random import randint
 
 n = int(input('Введите количество элементов в списке: '))
-
-numb_list : list =  []
-for x in range(1,n+1):
-    numb_list.append(x)
-
+numb_list : list =  [x for x in range(1,n+1)]
 print(numb_list)
 res_list : list =  []
 
