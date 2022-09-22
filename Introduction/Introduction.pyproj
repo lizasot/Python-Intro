@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4979f473-ad56-453d-b16b-ac9c38c88ff3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Seminar2\task15.py</StartupFile>
+    <StartupFile>Seminar5\task38.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -36,8 +36,25 @@
     <Compile Include="Seminar2\task19.py" />
     <Compile Include="Seminar2\task20.py" />
     <Compile Include="Seminar2\task21.py" />
+    <Compile Include="Seminar3\task22.py" />
+    <Compile Include="Seminar3\task23.py" />
+    <Compile Include="Seminar3\task24.py" />
+    <Compile Include="Seminar3\task25.py" />
+    <Compile Include="Seminar3\task26.py" />
+    <Compile Include="Seminar3\task27.py" />
+    <Compile Include="Seminar4\task31.py" />
+    <Compile Include="Seminar4\task32.py" />
+    <Compile Include="Seminar4\task33.py" />
+    <Compile Include="Seminar4\task34.py" />
+    <Compile Include="Seminar5\task38.py" />
+    <Compile Include="Seminar5\task39.py" />
+    <Compile Include="Seminar5\task40.py" />
+    <Compile Include="Seminar5\task42.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Seminar5\" />
+    <Folder Include="Seminar4\" />
+    <Folder Include="Seminar3\" />
     <Folder Include="Seminar2\" />
     <Folder Include="Seminar1\" />
   </ItemGroup>
