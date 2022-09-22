@@ -1,6 +1,6 @@
 def summOddPos(l:list):
     result = 0
-    for x in range(1,len(l),2):
+    for x in range(1,len(l), 2):
         result += l[x]
     return result
 
