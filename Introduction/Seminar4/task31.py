@@ -10,7 +10,7 @@ while n != 1:
         n //= 2
         pass
     added_prime = bool(0)
-    for x in range(3,n+1,2):
+    for x in range(3,n + 1,2):
         if n % x == 0:
             primes.append(x)
             n //= x

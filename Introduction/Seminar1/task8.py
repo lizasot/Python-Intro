@@ -1,5 +1,4 @@
-﻿x = float(input('x = '))
-y = float(input('y = '))
+﻿x, y = list(map(float, input('Введите через запятую x, y: ').split(',')))
 
 if x > 0 and y > 0:
     print('I четверть')

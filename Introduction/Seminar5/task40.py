@@ -3,7 +3,7 @@ import keyboard, enum, os
 
 def clear():
     #os.system('cls' if os.name=='nt' else 'clear')
-    print('\n'*100)
+    print('\n' * 100)
 
 class Direction (enum.Enum):
     left = 1
@@ -15,18 +15,18 @@ def getStrField(field : list):
     if len(field) != 9:
         return ''
     result = ''
-    for x in range(0,9,3):
+    for x in range(0, 9, 3):
         result += f'{field[x+0]}|{field[x+1]}|{field[x+2]}\n'
     return result
 
 def checkWin(field : list):
     #по горизонтали
-    for x in range(0,9,3):
-        if field[x+0] == field[x+1] == field[x+2] != ' ':
+    for x in range(0, 9, 3):
+        if field[x + 0] == field[x + 1] == field[x + 2] != ' ':
             return True
     #по вертикали
-    for x in range(0,3):
-        if field[x+0] == field[x+3] == field[x+6] != ' ':
+    for x in range(0, 3):
+        if field[x + 0] == field[x + 3] == field[x + 6] != ' ':
             return True
     #по диагонали
     if field[0] == field[4] == field[8] != ' ':
@@ -45,7 +45,7 @@ def drawSelectCell(field : list, ind : int):
     return getStrField(new_field)
 
 def getIndFirstFreeCeil(field : list):
-    for x in range(0,len(field)):
+    for x in range(0, len(field)):
         if field[x] == ' ':
             return x
     return -1
@@ -55,15 +55,10 @@ def updateConsole(player : bool, field : list, current_cell : int):
         print('Ходит игрок 2') #'o'
     else:
         print('Ходит игрок 1') #'x'
-    print(drawSelectCell(field,current_cell))
+    print(drawSelectCell(field, current_cell))
 
 def getFreeCell(field : list):
-    result : list = []
-    for x in range(0,9):
-        if field[x] == ' ':
-            result.append(x)
-    return result
-
+    return [x for x in range(0, 9) if field[x] == ' ']
 
 def moveSelection(field : list, current_cell : int, direction : Direction):
     freeCell = getFreeCell(field)
@@ -87,7 +82,7 @@ def moveSelection(field : list, current_cell : int, direction : Direction):
         else:
             return current_cell
 
-field : list = [' ']*9
+field : list = [' '] * 9
 player = False
 lose = False
 
@@ -102,13 +97,13 @@ while True:
     key = keyboard.read_key()
     while key != 'enter':
         if key == 'left':
-            current_cell = moveSelection(field,current_cell,Direction.left)
+            current_cell = moveSelection(field, current_cell, Direction.left)
         elif key == 'right':
-            current_cell = moveSelection(field,current_cell,Direction.right)
+            current_cell = moveSelection(field, current_cell, Direction.right)
         elif key == 'up':
-            current_cell = moveSelection(field,current_cell,Direction.up)
+            current_cell = moveSelection(field, current_cell, Direction.up)
         elif key == 'down':
-            current_cell = moveSelection(field,current_cell,Direction.down)
+            current_cell = moveSelection(field, current_cell, Direction.down)
         clear()
         updateConsole(player, field, current_cell)
         sleep(0.2)
